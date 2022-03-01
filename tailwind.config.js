@@ -1,20 +1,26 @@
 module.exports = {
     content: [
-        './node_modules/flotiq-components-react/dist/**/*.{js,jsx,ts,tsx}', // Flotiq Components location
+        './node_modules/flotiq-components-react/dist/**/*.{js,jsx,ts,tsx}',
         './src/**/*.{js,jsx,ts,tsx}',
     ],
     theme: {
         extend: {
             colors: {
-                'light-blue': '#E9F3FF',
-                primary: '#0083FC',
-                'primary-2': '#015BD7',
-                'dark-blue': '#141046',
+                primary: '#000000',
+                gray: '#7d7d7d',
+                'light-gray': '#F9F9F9',
             },
+        },
+        fontFamily: {
+            karla: ['Karla', 'sans-serif'],
+            sora: ['Sora', 'sans-serif'],
         },
     },
     presets: [
         require('./node_modules/flotiq-components-react/dist/tailwind.preset'), // Flotiq Component theme presets
+    ],
+    plugins: [
+        require('@tailwindcss/forms'),
     ],
     safelist: require('./node_modules/flotiq-components-react/dist/tailwind.safelist'),
 };

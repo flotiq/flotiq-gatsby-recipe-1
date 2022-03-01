@@ -16,9 +16,12 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.4",
+    "@fontsource/karla": "^4.5.3",
+    "@fontsource/sora": "^4.5.3",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@popperjs/core": "^2.11.0",
+    "@tailwindcss/forms": "^0.4.0",
     "flotiq-components-react": "^0.4.13",
     "gatsby": "^4.7.2",
     "gatsby-plugin-google-analytics": "^4.7.0",
