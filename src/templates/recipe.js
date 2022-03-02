@@ -25,29 +25,29 @@ const RecipeTemplate = ({ data, pageContext }) => {
             />
             <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col pl-0 mb-10">
-                    <div className="text-white bg-primary mt-10">
-                        <div className="px-10 py-5">
-                            <Header
-                                additionalClasses={['text-xl md:text-4xl text-white !font-semibold '
-                                + 'uppercase tracking-wider']}
-                                text={recipe.name}
-                            />
-                            <div className="flex flex-wrap justify-start text-xs text-primary font-light
+                    <div className="text-white bg-primary mt-10 px-10 md:px-24 py-10 relative">
+                        <div className="absolute top-0 left-0 h-6 md:h-12 w-6 md:w-12 bg-light-gray" />
+                        <Header
+                            additionalClasses={['text-xl md:text-4xl text-white !font-semibold '
+                                + 'uppercase tracking-wider !p-0']}
+                            text={recipe.name}
+                        />
+                        <div className="flex flex-wrap justify-start text-xs text-primary font-light
                             space-x-5 pb-3 mt-5"
-                            >
-                                <p className="px-3 py-2 bg-medium-gray flex items-center rounded-lg">
-                                    <ClockIcon className="h-5 w-5 text-primary mr-2" />
-                                    {' '}
-                                    <span className="text-sm">{recipe.cookingTime}</span>
-                                </p>
-                                <p className="px-3 py-2 bg-medium-gray flex items-center rounded-lg">
-                                    <UsersIcon className="h-5 w-5 text-primary mr-2" />
-                                    {' '}
-                                    <span className="text-sm">{recipe.servings}</span>
-                                </p>
-                            </div>
-                            <Paragraph text={recipe.description} />
+                        >
+                            <p className="px-3 py-2 bg-medium-gray flex items-center rounded-lg">
+                                <ClockIcon className="h-5 w-5 text-primary mr-2" />
+                                {' '}
+                                <span className="text-sm">{recipe.cookingTime}</span>
+                            </p>
+                            <p className="px-3 py-2 bg-medium-gray flex items-center rounded-lg">
+                                <UsersIcon className="h-5 w-5 text-primary mr-2" />
+                                {' '}
+                                <span className="text-sm">{recipe.servings}</span>
+                            </p>
                         </div>
+                        <Paragraph text={recipe.description} additionalClasses={['mt-5']} />
+                        <div className="absolute bottom-0 right-0 h-6 md:h-12 w-6 md:w-12 bg-white" />
                     </div>
                     <div className="bg-white px-4 md:px-10 py-5">
                         <Header
@@ -61,8 +61,8 @@ const RecipeTemplate = ({ data, pageContext }) => {
                                     <div key={ingredient.id} className="relative flex items-center py-1">
                                         <div className="flex items-center h-5 mr-3">
                                             <input
-                                                id={`person-${ingredient.id}`}
-                                                name={`person-${ingredient.id}`}
+                                                id={`ingredient-${ingredient.id}`}
+                                                name={`ingredient-${ingredient.id}`}
                                                 type="checkbox"
                                                 className="focus:ring-primary h-4 w-4 text-primary
                                                 border-primary rounded"
