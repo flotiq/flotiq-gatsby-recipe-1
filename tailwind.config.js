@@ -8,6 +8,7 @@ module.exports = {
             colors: {
                 primary: '#000000',
                 gray: '#7d7d7d',
+                'medium-gray': '#ebebeb',
                 'light-gray': '#F9F9F9',
             },
         },
@@ -21,6 +22,7 @@ module.exports = {
     ],
     plugins: [
         require('@tailwindcss/forms'),
+        require('@tailwindcss/line-clamp'),
     ],
     safelist: require('./node_modules/flotiq-components-react/dist/tailwind.safelist'),
 };
