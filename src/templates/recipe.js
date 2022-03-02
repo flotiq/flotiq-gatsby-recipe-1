@@ -5,12 +5,12 @@ import { Helmet } from 'react-helmet';
 import { ClockIcon, UsersIcon } from '@heroicons/react/solid';
 import Layout from '../layouts/layout';
 import RecipeSteps from '../components/RecipeSteps';
-import HeaderImageWithText from '../components/HeaderImageWithText';
-import RecipeCards from '../sections/RecipeCards';
+import RecipeCompactCards from '../sections/RecipeCompactCards';
+import Pagination from '../components/Pagination';
 
 const ingredientsHeaderText = 'Ingredients';
 
-const RecipeTemplate = ({ data }) => {
+const RecipeTemplate = ({ data, pageContext }) => {
     const { recipe } = data;
     const recipes = data.allRecipe.nodes;
 
@@ -86,13 +86,8 @@ const RecipeTemplate = ({ data }) => {
             <div className="flex flex-wrap max-w-7xl mx-auto px-4 md:px-10">
                 <RecipeSteps steps={recipe.steps} additionalClass={['my-5']} headerText="Steps:" />
             </div>
-            <HeaderImageWithText
-                recipe={recipe}
-                headerText1="Enjoy"
-                headerText2="your"
-                headerText3="meal!"
-            />
-            <RecipeCards recipes={recipes} headerText="Next recipe to cook:" />
+            <RecipeCompactCards recipes={recipes} headerText="Next recipe to cook:" />
+            <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} />
         </Layout>
     );
 };
