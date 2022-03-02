@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { Announcement } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
 import RecipeCards from '../sections/RecipeCards';
+import Pagination from '../components/Pagination';
 
 const announcementText = 'This is the Blog where you can find any kind of information and rich media content. \n'
     + 'Use it for your needs, add content and customize in any way';
@@ -29,6 +30,7 @@ const IndexPage = ({ data, pageContext }) => {
                 + 'tracking-widest text-xl md:text-2xl lg:text-3xl']}
             />
             <RecipeCards recipes={recipes} />
+            <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} />
             <div>
                 {recipes.map((recipe) => (
                     <a href={recipe.slug} className="block">{recipe.name}</a>
