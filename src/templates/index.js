@@ -34,7 +34,8 @@ const IndexPage = ({ data, pageContext }) => {
                 additionalClasses={['max-w-3xl mx-auto md:mt-10 uppercase font-semibold '
                 + 'tracking-widest text-xl md:text-2xl lg:text-3xl']}
             />
-            <CategoriesChoiceBar additionalClass={['my-5']} categoryTabs={categoryTabs} />
+            {/* Uncomment this to add categories to your recipes */}
+            {/* <CategoriesChoiceBar additionalClass={['my-5']} categoryTabs={categoryTabs} /> */}
             <div>
                 {recipes.map((recipe) => (
                     <a href={recipe.slug} className="block">{recipe.name}</a>
