@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import RecipeCards from '../sections/RecipeCards';
 
 /**
  * Content of index page
@@ -16,6 +17,7 @@ const IndexPage = ({ data, pageContext }) => {
             <Helmet>
                 <title>Main page</title>
             </Helmet>
+            <RecipeCards recipes={recipes} />
             <div>
                 {recipes.map((recipe) => (
                     <a href={recipe.slug} className="block">{recipe.name}</a>
