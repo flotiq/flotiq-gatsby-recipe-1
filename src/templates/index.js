@@ -1,8 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
+import { Announcement } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
 
+const announcementText = 'This is the Blog where you can find any kind of information and rich media content. \n'
+    + 'Use it for your needs, add content and customize in any way';
 /**
  * Content of index page
  */
@@ -16,6 +19,14 @@ const IndexPage = ({ data, pageContext }) => {
             <Helmet>
                 <title>Main page</title>
             </Helmet>
+            <Announcement
+                content={announcementText}
+                rounded="none"
+                textAlignment="center"
+                variant="transparent"
+                additionalClasses={['max-w-3xl mx-auto md:mt-10 uppercase font-semibold '
+                + 'tracking-widest text-xl md:text-2xl lg:text-3xl']}
+            />
             <div>
                 {recipes.map((recipe) => (
                     <a href={recipe.slug} className="block">{recipe.name}</a>
