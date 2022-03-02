@@ -1,23 +1,98 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import { Image, Header, Paragraph } from 'flotiq-components-react';
 import { Helmet } from 'react-helmet';
-import { graphql, Link } from 'gatsby';
-import { Button, Header } from 'flotiq-components-react';
+import { ClockIcon, UsersIcon } from '@heroicons/react/solid';
 import Layout from '../layouts/layout';
+import RecipeSteps from '../components/RecipeSteps';
+import HeaderImageWithText from '../components/HeaderImageWithText';
+import RecipeCards from '../sections/RecipeCards';
 
-/**
- * Content of example page
- */
-const ExamplePage = ({ data }) => {
-    // Extracting data from GraphQL query, the query is on the bottom of this file
+const ingredientsHeaderText = 'Ingredients';
+
+const RecipeTemplate = ({ data }) => {
     const { recipe } = data;
     const recipes = data.allRecipe.nodes;
+
     return (
-        <Layout>
-            {/* Content of <head> tag */}
+        <Layout additionalClass={['bg-light-gray']}>
             <Helmet>
-                <title>{recipe.title}</title>
+                <title>{recipe.name}</title>
             </Helmet>
-            <div>Recipe</div>
+            <Image
+                url={recipe.image[0] && recipe.image[0].localFile.publicURL}
+                additionalClasses={['']}
+            />
+            <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col pl-0 mb-10">
+                    <div className="text-white bg-primary mt-10">
+                        <div className="px-10 py-5">
+                            <Header
+                                additionalClasses={['text-xl md:text-4xl text-white !font-semibold '
+                                + 'uppercase tracking-wider']}
+                                text={recipe.name}
+                            />
+                            <div className="flex flex-wrap justify-start text-xs text-primary font-light
+                            space-x-5 pb-3 mt-5"
+                            >
+                                <p className="px-3 py-2 bg-medium-gray flex items-center rounded-lg">
+                                    <ClockIcon className="h-5 w-5 text-primary mr-2" />
+                                    {' '}
+                                    <span className="text-sm">{recipe.cookingTime}</span>
+                                </p>
+                                <p className="px-3 py-2 bg-medium-gray flex items-center rounded-lg">
+                                    <UsersIcon className="h-5 w-5 text-primary mr-2" />
+                                    {' '}
+                                    <span className="text-sm">{recipe.servings}</span>
+                                </p>
+                            </div>
+                            <Paragraph text={recipe.description} />
+                        </div>
+                    </div>
+                    <div className="bg-white px-4 md:px-10 py-5">
+                        <Header
+                            level={2}
+                            additionalClasses={['mt-5 pl-7 !text-2xl']}
+                            text={ingredientsHeaderText}
+                        />
+                        <fieldset className="space-y-5">
+                            <div>
+                                {recipe.ingredients.map((ingredient) => (
+                                    <div key={ingredient.id} className="relative flex items-center py-1">
+                                        <div className="flex items-center h-5 mr-3">
+                                            <input
+                                                id={`person-${ingredient.id}`}
+                                                name={`person-${ingredient.id}`}
+                                                type="checkbox"
+                                                className="focus:ring-primary h-4 w-4 text-primary
+                                                border-primary rounded"
+                                            />
+                                        </div>
+                                        <div className="min-w-0 flex-1 text-lg">
+                                            <label
+                                                htmlFor={`ingredient-${ingredient.id}`}
+                                                className="font-normal text-primary select-none"
+                                            >
+                                                { `${ingredient.amount} ${ingredient.unit} ${ingredient.product}` }
+                                            </label>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-wrap max-w-7xl mx-auto px-4 md:px-10">
+                <RecipeSteps steps={recipe.steps} additionalClass={['my-5']} headerText="Steps:" />
+            </div>
+            <HeaderImageWithText
+                recipe={recipe}
+                headerText1="Enjoy"
+                headerText2="your"
+                headerText3="meal!"
+            />
+            <RecipeCards recipes={recipes} headerText="Next recipe to cook:" />
         </Layout>
     );
 };
@@ -87,4 +162,4 @@ export const pageQuery = graphql`
     }
 `;
 
-export default ExamplePage;
+export default RecipeTemplate;
