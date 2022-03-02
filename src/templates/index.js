@@ -14,7 +14,6 @@ const announcementText = 'This is the Blog where you can find any kind of inform
  */
 const IndexPage = ({ data, pageContext }) => {
     // Extracting data from GraphQL query, the query is on the bottom of this file
-    const { recipe } = data;
     const recipes = data.allRecipe.nodes;
     const categoryTabs = [
         { name: 'Breakfast', href: '#', current: true },
@@ -40,11 +39,6 @@ const IndexPage = ({ data, pageContext }) => {
             {/* <CategoriesChoiceBar additionalClass={['my-5']} categoryTabs={categoryTabs} /> */}
             <RecipeCards recipes={recipes} />
             <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} />
-            <div>
-                {recipes.map((recipe) => (
-                    <a href={recipe.slug} className="block">{recipe.name}</a>
-                ))}
-            </div>
         </Layout>
     );
 };
