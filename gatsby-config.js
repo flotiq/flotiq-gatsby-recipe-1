@@ -38,7 +38,7 @@ module.exports = {
         'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-source-flotiq',
-            options: {
+            options: { // all options are described here: https://github.com/flotiq/gatsby-source-flotiq#parameters
                 authToken: process.env.GATSBY_FLOTIQ_API_KEY,
                 downloadMediaFile: true,
                 forceReload: false,

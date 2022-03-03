@@ -1,10 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { Announcement } from 'flotiq-components-react';
+import { Announcement, Pagination } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
 import RecipeCards from '../sections/RecipeCards';
-import Pagination from '../components/Pagination';
 import CategoriesChoiceBar from '../components/CategoriesChoiceBar';
 
 const announcementText = 'This is the Blog where you can find any kind of information and rich media content. \n'
@@ -38,7 +37,7 @@ const IndexPage = ({ data, pageContext }) => {
             {/* Uncomment this to add categories to your recipes */}
             {/* <CategoriesChoiceBar additionalClass={['my-5']} categoryTabs={categoryTabs} /> */}
             <RecipeCards recipes={recipes} />
-            <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} />
+            <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} rounded="none" />
         </Layout>
     );
 };
