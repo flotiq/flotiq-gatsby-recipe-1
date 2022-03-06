@@ -82,7 +82,7 @@ const RecipeTemplate = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-wrap max-w-7xl mx-auto px-4 md:px-10">
+            <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <RecipeSteps steps={recipe.steps} additionalClass={['my-5']} headerText="Steps:" />
             </div>
             <RecipeCompactCards recipes={recipes} headerText="Next recipe to cook:" />
