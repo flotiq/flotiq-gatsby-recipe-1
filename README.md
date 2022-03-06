@@ -7,7 +7,7 @@ Gatsby starter boilerplate with Flotiq source
 
 Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-Live Demo: https://flotiqgatsbyportfolio2.gatsbyjs.io
+Live Demo: https://flotiqgatsbyrecipe1.gatsbyjs.io
 
 This project use:
 * [Flotiq](https://flotiq.com) - Headless CMS for string your data (You can create account [here](https://editor.flotiq.com/register.html))
