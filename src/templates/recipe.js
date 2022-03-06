@@ -6,11 +6,10 @@ import { ClockIcon, UsersIcon } from '@heroicons/react/solid';
 import Layout from '../layouts/layout';
 import RecipeSteps from '../components/RecipeSteps';
 import RecipeCompactCards from '../sections/RecipeCompactCards';
-import Pagination from '../components/Pagination';
 
 const ingredientsHeaderText = 'Ingredients';
 
-const RecipeTemplate = ({ data, pageContext }) => {
+const RecipeTemplate = ({ data }) => {
     const { recipe } = data;
     const recipes = data.allRecipe.nodes;
 
@@ -83,11 +82,10 @@ const RecipeTemplate = ({ data, pageContext }) => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-wrap max-w-7xl mx-auto px-4 md:px-10">
+            <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <RecipeSteps steps={recipe.steps} additionalClass={['my-5']} headerText="Steps:" />
             </div>
             <RecipeCompactCards recipes={recipes} headerText="Next recipe to cook:" />
-            <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} />
         </Layout>
     );
 };

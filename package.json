@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-boilerplate",
+  "name": "flotiq-gatsby-recipe-1",
   "private": true,
   "description": "A boilerplate starter for Gatsby",
   "version": "1.0.0",
@@ -22,6 +22,7 @@
     "@heroicons/react": "^1.0.5",
     "@popperjs/core": "^2.11.0",
     "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
     "flotiq-components-react": "^0.4.13",
     "gatsby": "^4.7.2",
     "gatsby-plugin-google-analytics": "^4.7.0",
@@ -47,7 +48,6 @@
     "@babel/plugin-transform-react-jsx": "^7.17.3",
     "@babel/preset-react": "^7.16.7",
     "@hot-loader/react-dom": "17.0.2",
-    "@tailwindcss/line-clamp": "^0.3.1",
     "@typescript-eslint/parser": "^5.12.0",
     "autoprefixer": "^10.4.2",
     "babel-eslint": "^10.1.0",
@@ -69,9 +69,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/flotiq/gatsby-starter-boilerplate"
+    "url": "https://github.com/flotiq/flotiq-gatsby-recipe-1"
   },
   "bugs": {
-    "url": "https://github.com/flotiq/gatsby-starter-boilerplate/issues"
+    "url": "https://github.com/flotiq/flotiq-gatsby-recipe-1/issues"
   }
 }
