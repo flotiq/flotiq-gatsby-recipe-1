@@ -57,11 +57,11 @@ const RecipeTemplate = ({ data }) => {
                         <fieldset className="space-y-5">
                             <div>
                                 {recipe.ingredients.map((ingredient) => (
-                                    <div key={ingredient.id} className="relative flex items-center py-1">
+                                    <div key={ingredient.product} className="relative flex items-center py-1">
                                         <div className="flex items-center h-5 mr-3">
                                             <input
-                                                id={`ingredient-${ingredient.id}`}
-                                                name={`ingredient-${ingredient.id}`}
+                                                id={`ingredient-${ingredient.product}`}
+                                                name={`ingredient-${ingredient.product}`}
                                                 type="checkbox"
                                                 className="focus:ring-primary h-4 w-4 text-primary
                                                 border-primary rounded"
@@ -69,7 +69,7 @@ const RecipeTemplate = ({ data }) => {
                                         </div>
                                         <div className="min-w-0 flex-1 text-lg">
                                             <label
-                                                htmlFor={`ingredient-${ingredient.id}`}
+                                                htmlFor={`ingredient-${ingredient.product}`}
                                                 className="font-normal text-primary select-none"
                                             >
                                                 { `${ingredient.amount} ${ingredient.unit} ${ingredient.product}` }
