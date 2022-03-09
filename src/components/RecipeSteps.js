@@ -6,7 +6,7 @@ const RecipeSteps = ({ additionalClass, steps }) => (
     + 'bg-white py-5', ...additionalClass].join(' ')}
     >
         {steps.map((step, index) => (
-            <div className="w-full px-4 md:px-10">
+            <div key={step.step} className="w-full px-4 md:px-10">
                 <Paragraph
                     text={`Step ${index + 1}`}
                     additionalClasses={['font-semibold underline mr-2 !p-0']}

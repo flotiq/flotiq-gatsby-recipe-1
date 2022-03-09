@@ -17,13 +17,17 @@ const RecipeTemplate = ({ data }) => {
         <Layout additionalClass={['bg-light-gray']}>
             <Helmet>
                 <title>{recipe.name}</title>
+                <meta
+                    name="description"
+                    content={recipe.description}
+                />
             </Helmet>
             <Image
                 url={recipe.image[0] && recipe.image[0].localFile.publicURL}
                 additionalClasses={['']}
             />
             <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col pl-0 mb-10">
+                <div className="flex flex-col pl-0 mb-10 w-full">
                     <div className="text-white bg-primary mt-10 px-10 md:px-24 py-10 relative">
                         <div className="absolute top-0 left-0 h-6 md:h-12 w-6 md:w-12 bg-light-gray" />
                         <Header
@@ -57,11 +61,11 @@ const RecipeTemplate = ({ data }) => {
                         <fieldset className="space-y-5">
                             <div>
                                 {recipe.ingredients.map((ingredient) => (
-                                    <div key={ingredient.id} className="relative flex items-center py-1">
+                                    <div key={ingredient.product} className="relative flex items-center py-1">
                                         <div className="flex items-center h-5 mr-3">
                                             <input
-                                                id={`ingredient-${ingredient.id}`}
-                                                name={`ingredient-${ingredient.id}`}
+                                                id={`ingredient-${ingredient.product}`}
+                                                name={`ingredient-${ingredient.product}`}
                                                 type="checkbox"
                                                 className="focus:ring-primary h-4 w-4 text-primary
                                                 border-primary rounded"
@@ -69,7 +73,7 @@ const RecipeTemplate = ({ data }) => {
                                         </div>
                                         <div className="min-w-0 flex-1 text-lg">
                                             <label
-                                                htmlFor={`ingredient-${ingredient.id}`}
+                                                htmlFor={`ingredient-${ingredient.product}`}
                                                 className="font-normal text-primary select-none"
                                             >
                                                 { `${ingredient.amount} ${ingredient.unit} ${ingredient.product}` }
