@@ -48,18 +48,19 @@ const RecipeCompactCard = ({
                     </p>
                 </div>
             </Link>
-            <div className="flex flex-wrap justify-start text-sm font-light mt-3">
-                {tags && tags.map((tag) => (
-                    <a
-                        key={tag}
-                        href="/"
-                        className="mr-5 my-1 py-2 inline-flex items-center justify-center
-                       rounded-md underline text-xs font-light hover:text-secondary"
-                    >
-                        {tag}
-                    </a>
-                ))}
-            </div>
+            {/* Uncomment this to add categories to your recipes */}
+            {/* <div className="flex flex-wrap justify-start text-sm font-light mt-3"> */}
+            {/*    {tags && tags.map((tag) => ( */}
+            {/*        <Link */}
+            {/*            key={tag} */}
+            {/*            href="/" */}
+            {/*            className="mr-5 my-1 py-2 inline-flex items-center justify-center */}
+            {/*           rounded-md underline text-xs font-light hover:text-secondary" */}
+            {/*        > */}
+            {/*            {tag} */}
+            {/*        </Link> */}
+            {/*    ))} */}
+            {/* </div> */}
         </Card.Body>
     </Card>
 );

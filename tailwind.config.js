@@ -11,10 +11,11 @@ module.exports = {
                 'medium-gray': '#ebebeb',
                 'light-gray': '#F9F9F9',
             },
-        },
-        fontFamily: {
-            karla: ['Karla', 'sans-serif'],
-            sora: ['Sora', 'sans-serif'],
+            fontFamily: {
+                karla: ['Karla', 'sans-serif'],
+                sora: ['Sora', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
+            },
         },
     },
     presets: [

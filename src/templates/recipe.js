@@ -23,7 +23,7 @@ const RecipeTemplate = ({ data }) => {
                 additionalClasses={['']}
             />
             <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col pl-0 mb-10">
+                <div className="flex flex-col pl-0 mb-10 w-full">
                     <div className="text-white bg-primary mt-10 px-10 md:px-24 py-10 relative">
                         <div className="absolute top-0 left-0 h-6 md:h-12 w-6 md:w-12 bg-light-gray" />
                         <Header
