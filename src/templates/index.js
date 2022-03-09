@@ -24,7 +24,11 @@ const IndexPage = ({ data, pageContext }) => {
         <Layout additionalClass={['font-karla']}>
             {/* Content of <head> tag */}
             <Helmet>
-                <title>Main page</title>
+                <title>{data.site.siteMetadata.title}</title>
+                <meta
+                    name="description"
+                    content={data.site.siteMetadata.description}
+                />
             </Helmet>
             <Announcement
                 content={announcementText}
@@ -47,6 +51,7 @@ export const pageQuery = graphql`
         site {
             siteMetadata {
                 title
+                description
             }
         }
         allRecipe(sort: {fields: flotiqInternal___createdAt, order: DESC}, limit: $limit, skip: $skip,) {

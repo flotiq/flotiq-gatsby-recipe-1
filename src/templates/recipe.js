@@ -17,6 +17,10 @@ const RecipeTemplate = ({ data }) => {
         <Layout additionalClass={['bg-light-gray']}>
             <Helmet>
                 <title>{recipe.name}</title>
+                <meta
+                    name="description"
+                    content={recipe.description}
+                />
             </Helmet>
             <Image
                 url={recipe.image[0] && recipe.image[0].localFile.publicURL}
