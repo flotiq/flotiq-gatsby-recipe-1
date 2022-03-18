@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Image, Header, Paragraph } from 'flotiq-components-react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Header, Paragraph } from 'flotiq-components-react';
 import { Helmet } from 'react-helmet';
 import { ClockIcon, UsersIcon } from '@heroicons/react/solid';
 import Layout from '../layouts/layout';
 import RecipeSteps from '../components/RecipeSteps';
-import RecipeCompactCards from '../sections/RecipeCompactCards';
+import RecipeCards from '../sections/RecipeCards';
 
 const ingredientsHeaderText = 'Ingredients';
 
@@ -22,9 +23,10 @@ const RecipeTemplate = ({ data }) => {
                     content={recipe.description}
                 />
             </Helmet>
-            <Image
-                url={recipe.image[0] && recipe.image[0].localFile.publicURL}
-                additionalClasses={['']}
+            <GatsbyImage
+                image={getImage(recipe.image[0] && recipe.image[0].localFile)}
+                alt={recipe.name}
+                className="w-full"
             />
             <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col pl-0 mb-10 w-full">
@@ -89,7 +91,7 @@ const RecipeTemplate = ({ data }) => {
             <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <RecipeSteps steps={recipe.steps} additionalClass={['my-5']} headerText="Steps:" />
             </div>
-            <RecipeCompactCards recipes={recipes} headerText="Next recipe to cook:" />
+            <RecipeCards recipes={recipes} headerText="Next recipe to cook:" compact />
         </Layout>
     );
 };
@@ -129,6 +131,9 @@ export const pageQuery = graphql`
                 image {
                     localFile {
                         publicURL
+                        childImageSharp {
+                            gatsbyImageData(layout: FULL_WIDTH)
+                        }
                     }
                 }
                 step
