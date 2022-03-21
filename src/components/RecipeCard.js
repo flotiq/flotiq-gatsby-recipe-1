@@ -1,21 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Card, Paragraph } from 'flotiq-components-react';
+import { Card } from 'flotiq-components-react';
 import { ClockIcon, UsersIcon } from '@heroicons/react/solid';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const CustomRecipeCard = ({ slug, cookingTime, image, name, description, servings, tags }) => (
+const CustomRecipeCard = ({ slug, cookingTime, image, name, description, servings, tags, compact }) => (
     <Card
-        horizontal
+        horizontal={!compact}
         rounded="none"
         bordered={false}
-        additionalClasses={['mb-4 cursor-pointer grid md:grid-cols-2 lg:grid-cols-3']}
+        additionalClasses={compact ? ['mb-4 cursor-pointer'] : ['mb-4 cursor-pointer grid md:grid-cols-2 lg:grid-cols-3']}
     >
         <Link
             to={`/${slug}`}
             className="lg:col-span-2 bg-cover bg-center"
-            style={{ backgroundImage: `url('${image}')` }}
+            style={{ backgroundImage: `url('${image.publicURL}')` }}
         >
-            <Card.Img src={image} alt={name} additionalContainerClasses={['w-full md:hidden']} />
+            <GatsbyImage
+                image={getImage(image)}
+                alt={name}
+                className={compact ? 'w-full' : 'w-full md:hidden'}
+            />
         </Link>
         <Card.Body
             additionalClasses={[
@@ -26,10 +31,12 @@ const CustomRecipeCard = ({ slug, cookingTime, image, name, description, serving
                 <Card.Title additionalClasses={['font-semibold uppercase mb-5 !text-2xl md:!text-3xl']}>
                     {name}
                 </Card.Title>
-                <Paragraph
-                    text={description}
-                    additionalClasses={['line-clamp-4 md:line-clamp-5 !p-0']}
-                />
+                {!compact && (
+                    <p
+                        className="line-clamp-4 md:line-clamp-5 !p-0"
+                        dangerouslySetInnerHTML={{ __html: description }}
+                    />
+                )}
                 <div className="flex flex-wrap justify-start text-xs font-light space-x-5 pb-3 mt-5">
                     <p className="px-3 py-2 bg-medium-gray flex items-center rounded-lg">
                         <ClockIcon className="h-5 w-5 text-primary mr-2" />

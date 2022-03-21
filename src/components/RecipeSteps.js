@@ -1,5 +1,6 @@
 import React from 'react';
-import { Image, Paragraph } from 'flotiq-components-react';
+import { Paragraph } from 'flotiq-components-react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const RecipeSteps = ({ additionalClass, steps }) => (
     <div className={['flex flex-wrap max-w-7xl mx-auto '
@@ -13,7 +14,13 @@ const RecipeSteps = ({ additionalClass, steps }) => (
                 />
                 <Paragraph text={step.step} additionalClasses={['!p-0 mb-5']} />
                 {step.image && step.image[0]
-                  && <Image url={step.image[0].localFile.publicURL} additionalClasses={['pb-5 md:pb-10']} />}
+                  && (
+                      <GatsbyImage
+                          image={getImage(step.image[0].localFile)}
+                          alt={step.step}
+                          className="w-full mb-5 md:mb-10"
+                      />
+                  )}
             </div>
         ))}
     </div>
