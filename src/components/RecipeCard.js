@@ -9,7 +9,9 @@ const CustomRecipeCard = ({ slug, cookingTime, image, name, description, serving
         horizontal={!compact}
         rounded="none"
         bordered={false}
-        additionalClasses={compact ? ['mb-4 cursor-pointer'] : ['mb-4 cursor-pointer grid md:grid-cols-2 lg:grid-cols-3']}
+        additionalClasses={
+            compact ? ['mb-4 cursor-pointer'] : ['mb-4 cursor-pointer grid md:grid-cols-2 lg:grid-cols-3']
+        }
     >
         <Link
             to={`/${slug}`}
