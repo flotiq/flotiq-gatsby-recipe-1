@@ -14,12 +14,13 @@ const announcementText = 'This is the Blog where you can find any kind of inform
 const IndexPage = ({ data, pageContext }) => {
     // Extracting data from GraphQL query, the query is on the bottom of this file
     const recipes = data.allRecipe.nodes;
-    const categoryTabs = [
-        { name: 'Breakfast', href: '#', current: true },
-        { name: 'Dinner', href: '#', current: false },
-        { name: 'Dessert', href: '#', current: false },
-        { name: 'Lunch', href: '#', current: false },
-    ];
+    // Uncomment this to add categories to your recipes
+    // const categoryTabs = [
+    //     { name: 'Breakfast', href: '#', current: true },
+    //     { name: 'Dinner', href: '#', current: false },
+    //     { name: 'Dessert', href: '#', current: false },
+    //     { name: 'Lunch', href: '#', current: false },
+    // ];
     return (
         <Layout additionalClass={['font-karla']}>
             {/* Content of <head> tag */}
