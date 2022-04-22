@@ -5168,10 +5168,10 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.5.tgz"
   integrity sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==
 
-flotiq-components-react@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/flotiq-components-react/-/flotiq-components-react-0.5.0.tgz#8e97c108386e1df44f25b1e8bfe871b5099a3ce5"
-  integrity sha512-Y8S0tZsbWi9dTjR/JserkZH7x8aJFFcS5FotnK52yQRh+90irlrRWAyeLEDjlC45CyI465HMLmXokZy0dnh93w==
+flotiq-components-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/flotiq-components-react/-/flotiq-components-react-1.0.0.tgz#768f2ff3996820311b278e522eff2c75f78b7370"
+  integrity sha512-/llhU4IVkLX4ha5jCxAJLvsad/s5BTpRGJgragHDo8Yiz+LfP9ECAtmRgbXvKGuIzpJsRfLrsBrinF3w/u5LFQ==
 
 follow-redirects@^1.0.0, follow-redirects@^1.14.0:
   version "1.14.8"
@@ -5566,10 +5566,10 @@ gatsby-source-filesystem@^4.4.0, gatsby-source-filesystem@^4.7.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-source-flotiq@^4.1.5:
-  version "4.1.5"
-  resolved "https://registry.npmjs.org/gatsby-source-flotiq/-/gatsby-source-flotiq-4.1.5.tgz"
-  integrity sha512-Pa2OH0Pj1RfSijro7K8QglWU4c9GTj2lt3Jn+oTlzXvNeuNdPLFH6meDuVcfPznaexvlBX5b45sosKM8HtHZjg==
+gatsby-source-flotiq@^4.1.8:
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/gatsby-source-flotiq/-/gatsby-source-flotiq-4.1.8.tgz#53132227bb6c9bb989daf15b6d98792452246930"
+  integrity sha512-K9qTztJQ6FebOq1dditL3w3lqE2+ryOqjBiETRNM3HBtfU1LfkOnh75rYsHQpw3xJl0Coiqj1vvxB5vlnrogJQ==
   dependencies:
     gatsby-core-utils "^3.4.0"
     gatsby-source-filesystem "^4.4.0"

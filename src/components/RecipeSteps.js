@@ -8,11 +8,12 @@ const RecipeSteps = ({ additionalClass, steps }) => (
     >
         {steps.map((step, index) => (
             <div key={step.step} className="w-full px-4 md:px-10">
-                <Paragraph
-                    text={`Step ${index + 1}`}
-                    additionalClasses={['font-semibold underline mr-2 !p-0']}
-                />
-                <Paragraph text={step.step} additionalClasses={['!p-0 mb-5']} />
+                <Paragraph additionalClasses={['font-semibold underline mr-2 !p-0']}>
+                    {`Step ${index + 1}`}
+                </Paragraph>
+                <Paragraph additionalClasses={['!p-0 mb-5']}>
+                    {step.step}
+                </Paragraph>
                 {step.image && step.image[0]
                   && (
                       <GatsbyImage

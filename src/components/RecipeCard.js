@@ -32,7 +32,7 @@ const CustomRecipeCard = ({ slug, cookingTime, image, name, description, serving
                     {name}
                 </Card.Title>
                 {!compact && (
-                    <p
+                    <div
                         className="line-clamp-4 md:line-clamp-5 !p-0"
                         dangerouslySetInnerHTML={{ __html: description }}
                     />
