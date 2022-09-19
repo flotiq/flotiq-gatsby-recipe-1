@@ -21,12 +21,12 @@ This project works on node ^14.17.0 || >=16.0.0, we do not support node 15.
 
 Start the project from template using [Flotiq CLI]((https://github.com/flotiq/flotiq-cli))
 
-    ```bash
-   npm install -g flotiq-cli
-   flotiq start [projectName] https://github.com/flotiq/flotiq-gatsby-recipe-1.git [flotiqApiKey]
-    ```
-   * `flotiqApKey` - Read and write API key to your Flotiq account
-   * `projectName` - project name or project path (if you wish to start project in or import data from the current directory - use `.`)
+ ```bash
+npm install -g flotiq-cli
+flotiq start [projectName] https://github.com/flotiq/flotiq-gatsby-shop-1.git [flotiqApiKey]
+```
+* `flotiqApKey` - Read and write API key to your Flotiq account
+* `projectName` - project name or project path (if you wish to start project in or import data from the current directory - use `.`)
 
 This command will:
 - create project based on template using the `gatsby new` command
