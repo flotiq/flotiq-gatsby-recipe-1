@@ -40,10 +40,10 @@ This command will:
 Environment variables are stored in the `.env` files.
 The `.env.development` file inside the root of the directory should have the following structure:
 
-    ```
-    GATSBY_FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
-    GA_MEASUREMENT_ID=YOUR MEASUREMENT ID
-    ```
+```
+GATSBY_FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
+GA_MEASUREMENT_ID=YOUR MEASUREMENT ID
+```
 
 ## Import data (optional)
 
