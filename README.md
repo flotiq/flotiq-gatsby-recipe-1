@@ -23,7 +23,7 @@ Start the project from template using [Flotiq CLI]((https://github.com/flotiq/fl
 
  ```bash
 npm install -g flotiq-cli
-flotiq start [projectName] https://github.com/flotiq/flotiq-gatsby-shop-1.git [flotiqApiKey]
+flotiq start [projectName] https://github.com/flotiq/flotiq-gatsby-recipe-1.git [flotiqApiKey]
 ```
 * `flotiqApKey` - Read and write API key to your Flotiq account
 * `projectName` - project name or project path (if you wish to start project in or import data from the current directory - use `.`)
