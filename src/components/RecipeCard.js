@@ -51,18 +51,19 @@ const CustomRecipeCard = ({ slug, cookingTime, image, name, description, serving
                 </div>
 
             </Link>
-            {/* Uncomment this to add categories to your recipes */}
-            {/* <div className="flex flex-wrap justify-start text-sm font-light mt-5"> */}
-            {/*    {tags && tags.map((tag) => ( */}
-            {/*        <Link */}
-            {/*            to="/" */}
-            {/*            className="mr-5 my-1 py-2 inline-flex items-center justify-center */}
-            {/*           rounded-md underline text-xs font-light hover:text-secondary" */}
-            {/*        > */}
-            {/*            {tag} */}
-            {/*        </Link> */}
-            {/*    ))} */}
-            {/* </div> */}
+            {/* Comment this div to hide categories in your recipes  */}
+            <div className="flex flex-wrap justify-start text-sm font-light mt-5">
+                {tags && tags.map((tag) => (
+                    <Link
+                        to="/"
+                        className="mr-5 my-1 py-2 inline-flex items-center justify-center 
+                       rounded-md underline text-xs font-light hover:text-secondary"
+                        key={tag}
+                    >
+                        {tag}
+                    </Link>
+                ))}
+            </div>
         </Card.Body>
     </Card>
 );
