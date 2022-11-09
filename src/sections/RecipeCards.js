@@ -19,7 +19,7 @@ const RecipeCards = ({ recipes, headerText, compact = false }) => (
                     description={recipe.description}
                     cookingTime={recipe.cookingTime}
                     servings={recipe.servings}
-                    tags={['#dinner', '#vegan', '#lunch', '#glutenfree']}
+                    tags={[]}
                     compact={compact}
                 />
             ))}
