@@ -79,7 +79,7 @@ const RecipeTemplate = ({ data }) => {
                                                 htmlFor={`ingredient-${ingredient.product}`}
                                                 className="font-normal text-primary select-none"
                                             >
-                                                { `${ingredient.amount} ${ingredient.unit} ${ingredient.product}` }
+                                                {`${ingredient.amount} ${ingredient.unit} ${ingredient.product}`}
                                             </label>
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@ export const pageQuery = graphql`
                 localFile {
                     publicURL
                     childImageSharp {
-                        gatsbyImageData(layout: FULL_WIDTH)
+                        gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
                     }
                 }
             }
@@ -133,7 +133,7 @@ export const pageQuery = graphql`
                     localFile {
                         publicURL
                         childImageSharp {
-                            gatsbyImageData(layout: FULL_WIDTH)
+                            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
                         }
                     }
                 }
@@ -156,7 +156,7 @@ export const pageQuery = graphql`
                     localFile {
                         publicURL
                         childImageSharp {
-                            gatsbyImageData(layout: FULL_WIDTH)
+                            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
                         }
                     }
                 }
