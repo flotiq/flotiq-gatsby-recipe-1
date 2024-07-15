@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.17",
-    "@fontsource/karla": "^5.0.19",
+    "@fontsource/karla": "^5.0.20",
     "@fontsource/sora": "^5.0.17",
     "@headlessui/react": "^1.7.19",
     "@heroicons/react": "1.0.6",
