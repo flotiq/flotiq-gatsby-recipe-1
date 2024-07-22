@@ -41,7 +41,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "typescript": "^5.4.5",
-    "webpack": "^5.91.0"
+    "webpack": "^5.93.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
