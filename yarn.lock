@@ -1500,10 +1500,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.0.20.tgz#968436ab21f05d3b3cb3191fa0958d91e37dde43"
   integrity sha512-rtw2F7xfM7rJmmnncXnR4ADr5wXsp4GyN1O1jmQJ1PMjAK+bm620/ZkQkeOYOkGoa09OksGinOeMA+Mkt6K9PQ==
 
-"@fontsource/karla@^5.0.20":
-  version "5.0.20"
-  resolved "https://registry.yarnpkg.com/@fontsource/karla/-/karla-5.0.20.tgz#bca0e4682a7129d40906a92a2a897467efa65173"
-  integrity sha512-erV4r7dRmWSi0T9ONf+RfYIj2mZoYLQnGhu6Qd3ihfwEbEnnqEcc1IJzUY4Jb3UOSVIeT2HIwroizao9yoTWcw==
+"@fontsource/karla@^5.0.21":
+  version "5.0.21"
+  resolved "https://registry.yarnpkg.com/@fontsource/karla/-/karla-5.0.21.tgz#261e8752bee8c6cd81784d70106a1d893e67fa8c"
+  integrity sha512-trLa46ilVysnTncutPHzYa2ZUlWJ9YKLJ1QUEUg/epCLvHoNfkRE5xLedkgpHGD3hfi93+Byy05jAGh3UZvD2A==
 
 "@fontsource/sora@^5.0.18":
   version "5.0.18"
